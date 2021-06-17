@@ -1,10 +1,19 @@
+#workflow
 name: learn-github-actions
+#event
 on: [push]
+#Jobs (obvio.rs). Agrupa todos os trabalhos no arquivo de fluxo de trabalho learn-github-actions.
 jobs:
+  #Define o nome do job (check-bats-version)
   check-bats-version:
+    #Configura o job a ser executado em um executor do Ubuntu Linux
     runs-on: ubuntu-latest
+    #Agrupa todos os passos são executados no job check-bats-version
     steps:
+      #diz ao jobd para recuperar v2 da ação o nome actions/checkout@v2. Verifica seu repositório e o faz o download do runner
       - uses: actions/checkout@v2
+      #Esta ação instala o software "node" no runner
       - uses: actions/setup-node@v1
+      #A palavra-chave "run" diz ao job para executar um comando no runner.
       - run: npm install -g bats
       - run: bats -v
