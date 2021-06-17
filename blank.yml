@@ -1,0 +1,14 @@
+name: CI
+
+on: [ push ]
+  
+jobs:
+  build:
+    name: Setup Node.js environment
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: '10.x'
+   
