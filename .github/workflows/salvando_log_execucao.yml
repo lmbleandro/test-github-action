@@ -4,14 +4,16 @@ name: learn-github-actions
 on: [push]
 #Jobs (obvio.rs). Agrupa todos os trabalhos no arquivo de fluxo de trabalho learn-github-actions.
 jobs:
-  example-job:
-    name: Save output
-    steps:
-      - shell: bash
-        run: |
-          expr 1 + 1 > output.log
-      - name: Upload output file
-        uses: actions/upload-artifact@v2
-        with:
-          name: output-log-file
-          path: output.log
+  check-bats-version:
+    runs-on: ubuntu-latest
+    example-job:
+      name: Save output
+      steps:
+        - shell: bash
+          run: |
+            expr 1 + 1 > output.log
+        - name: Upload output file
+          uses: actions/upload-artifact@v2
+          with:
+            name: output-log-file
+            path: output.log
