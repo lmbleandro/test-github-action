@@ -1,5 +1,5 @@
 #workflow
-name: learn-github-actions
+name: Upload-Download
 #event
 on: [push]
 #Jobs (obvio.rs). Agrupa todos os trabalhos no arquivo de fluxo de trabalho learn-github-actions.
